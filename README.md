@@ -2,7 +2,7 @@
 
 `codeclimate-doby` is a Code Climate engine based on [DoBy](https://github.com/andyw8/do_by), a tool for setting expiry dates on TODO notes.
 
-You can run it on your command line using the Code Climate CLI, or on the Code Climate hosted analysis platform.
+You can run it on the command line using the Code Climate CLI, or on the Code Climate hosted analysis platform.
 
 ### Usage
 
