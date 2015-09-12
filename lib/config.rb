@@ -9,10 +9,6 @@ class Config
     parsed_json.fetch("exclude_paths")
   end
 
-  def include_paths
-    parsed_json.fetch("include_paths")
-  end
-
   def enabled?
     parsed_json.fetch("enabled")
   end
