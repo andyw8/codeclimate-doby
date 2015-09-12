@@ -1,7 +1,4 @@
 require 'json'
-# require 'bundler'
-# Bundler.require
-# require "codeclimate_engine"
 
 class InvalidTaskSyntax
   def initialize(line:, path:, line_number:)
