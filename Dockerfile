@@ -22,6 +22,5 @@ RUN adduser -u 9000 -D app
 USER app
 
 COPY . /usr/src/app
-# VOLUME /usr/src/app
 
 CMD ["/usr/src/app/bin/codeclimate-doby"]
