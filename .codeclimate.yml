@@ -1,0 +1,7 @@
+engines:
+  doby:
+    enabled: true
+exclude_paths:
+- "lib/**/*"
+- "spec/**/*"
+- "README.md"

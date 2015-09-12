@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), "../lib")))
+
+require "rubygems"
+require "bundler/setup"
+# Bundler.setup
+
+require "codeclimate_engine"
+require "scanner"
+require "parse_file_contents"
+require "config"
+
+# raise File.read("/config.json")
+config_data = File.read("/config.json")
+STDERR.puts config_data
+config = Config.new(config_data)
+
+Scanner.call("/code", config).each do |path|
+  contents = File.read(path)
+  ParseFileContents.call(content: contents, path: path)
+end
+
+# raise "stop"
+# raise "stop" # if ENV["DEBUG"]
+
+# location = CCEngine::Location::LineRange.new( 
+#   path:       "foo/bar.txt",
+#   line_range: 13..13
+# )
+#
+# issue = CCEngine::Issue.new(
+#   check_name:  "Bug Risk/Unused Variable",
+#   description: "Unused local variable `foo`",
+#   categories:  [CCEngine::Category.complexity, CCEngine::Category.style],
+#   location:    location
+# )
+#
+# puts issue.to_json
+# puts "\0"
+# puts issue.to_json
+# puts "\0"
