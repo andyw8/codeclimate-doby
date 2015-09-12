@@ -18,6 +18,10 @@ class Scanner
     end.compact
   end
 
+  protected
+
+  attr_reader :path, :config
+
   private
 
   def valid_for_inclusion?(f)
@@ -33,6 +37,4 @@ class Scanner
     end
     false
   end
-
-  attr_reader :path, :config
 end

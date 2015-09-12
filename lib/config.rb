@@ -17,9 +17,11 @@ class Config
     parsed_json.fetch("enabled")
   end
 
-  private
+  protected
 
   attr_reader :json_string
+
+  private
 
   def parsed_json
     @parsed_json = JSON.parse(json_string)
