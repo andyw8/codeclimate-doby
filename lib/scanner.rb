@@ -29,7 +29,6 @@ class Scanner
 
   def excluded?(f)
     config.exclude_paths.each do |exclude_path|
-      STDERR.puts "Checking if #{f.gsub('/code/', '')} == #{exclude_path}"
       return true if f.gsub('/code/', '') == exclude_path
     end
     false
