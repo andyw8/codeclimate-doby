@@ -2,6 +2,11 @@ engines:
   doby:
     enabled: true
 exclude_paths:
-- "lib/**/*"
-- "spec/**/*"
+- "Dockerfile"
+- "Gemfile"
+- "Gemfile.lock"
 - "README.md"
+- "Rakefile"
+- "bin/"
+- "lib/"
+- "spec/"
