@@ -3,6 +3,8 @@ require "find"
 # Return a list of files in the given path (recusively).
 # Skips directores and files beginning with a dot.
 class Scanner
+  PATH_PREFIX = "/code/"
+
   def initialize(path, config)
     @path, @config = path, config
   end
@@ -12,10 +14,7 @@ class Scanner
   end
 
   def call
-    Find.find(path).map do |f|
-      next unless valid_for_inclusion?(f)
-      f
-    end.compact
+    Find.find(path).select { |f| included?(f) }
   end
 
   protected
@@ -24,17 +23,11 @@ class Scanner
 
   private
 
-  def valid_for_inclusion?(f)
-    return false if File.directory?(f)
-    return false if f.include?("/.")
-    return false if excluded?(f)
-    true
-  end
+  def included?(path)
+    return false if File.directory?(path)
 
-  def excluded?(f)
-    config.exclude_paths.each do |exclude_path|
-      return true if f.gsub('/code/', '') == exclude_path
+    config.include_paths.any? do |include_path|
+      path.gsub(PATH_PREFIX, '').start_with?(include_path)
     end
-    false
   end
 end

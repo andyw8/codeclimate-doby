@@ -1,19 +1,19 @@
 require "config"
 
 RSpec.describe Config do
-  describe "#exclude_paths" do
+  describe "#include_paths" do
     it "handles an empty array" do
-      config = Config.new('{"exclude_paths":[]}')
+      config = Config.new('{"include_paths":[]}')
 
-      result = config.exclude_paths
+      result = config.include_paths
 
       expect(result).to eq([])
     end
 
     it "handles an array containing paths" do
-      config = Config.new('{"exclude_paths":["foo/bar.txt", "foo/cat.txt"]}')
+      config = Config.new('{"include_paths":["foo/bar.txt", "foo/cat.txt"]}')
 
-      result = config.exclude_paths
+      result = config.include_paths
 
       expect(result).to eq(["foo/bar.txt", "foo/cat.txt"])
     end

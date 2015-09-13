@@ -5,8 +5,8 @@ class Config
     @json_string = json_string
   end
 
-  def exclude_paths
-    parsed_json.fetch("exclude_paths")
+  def include_paths
+    parsed_json.fetch("include_paths")
   end
 
   def enabled?
