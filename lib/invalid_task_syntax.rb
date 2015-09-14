@@ -18,9 +18,9 @@ class InvalidTaskSyntax
     )
 
     issue = CCEngine::Issue.new(
-      check_name:  "ToDo",
+      check_name:  "Invalid task syntax",
       description: "Invalid task syntax",
-      categories:  [CCEngine::Category.complexity],
+      categories:  [CCEngine::Category.bug_risk],
       location:    location
     )
 

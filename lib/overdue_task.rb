@@ -20,7 +20,7 @@ class OverdueTask
     issue = CCEngine::Issue.new(
       check_name:  "Overdue Task",
       description: "An overdue task was found",
-      categories:  [CCEngine::Category.complexity],
+      categories:  [CCEngine::Category.bug_risk],
       location:    location
     )
 
