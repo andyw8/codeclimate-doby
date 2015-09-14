@@ -23,4 +23,3 @@ class Config
     @parsed_json = JSON.parse(json_string)
   end
 end
-
