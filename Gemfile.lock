@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/andyw8/codeclimate-engine-rb.git
-  revision: 6562f2cd5308dc2b1623fb5b8e6f2aeaafaa4dff
+  revision: a78d3567284594503b45d350158d78de5f242883
   specs:
     codeclimate_engine (0.1.0)
       virtus (~> 1.0)
@@ -47,4 +47,4 @@ DEPENDENCIES
   rspec
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

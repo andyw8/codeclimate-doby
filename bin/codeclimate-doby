@@ -7,10 +7,9 @@ require "bundler/setup"
 require "codeclimate_engine"
 require "scanner"
 require "parse_file_contents"
-require "config"
 
 config_data = File.read("/config.json")
-config = Config.new(config_data)
+config = CCEngine::Config.new(config_data)
 
 Scanner.call("/code", config).each do |path|
   contents = File.read(path)
